@@ -13,7 +13,7 @@ print "Begin " + time.strftime("%m_%d_%Y_%H:%M:%S")
 
 print "Verifying Directories..."
 
-path = "D:\\TxDOT\\Pavement\\File_Build\\" + fileYear
+path = "D:\\Projects_2022\\RoadbedWidth_PavementRequest\\File_Build\\" + fileYear
 if not os.path.exists(path):
     os.makedirs(path)
 
@@ -21,11 +21,11 @@ gdb = path + "\\Pavement_File_Build_" + fileYear + ".gdb"
 grid_connection = 'app_texas_grid_rpt/semperfi@oracle-amazon-gridprod:1521/GRIDDB'
 
 # lastYear = str(int(fileYear) - 1)
-# lastYearHeader = path + "\\For_" + lastYear + "\\OffSystem_HEADER_" + lastYear + ".shp"
+# lastYearHeader = path + "\\For_" + lastYear + "\\OnSystem_PVMT" + lastYear + ".shp"
 
 
 arcpy.env.overwriteOutput = True
-arcpy.CreateFileGDB_management(path, "Pavement_File_Build_" + fileYear)
+arcpy.CreateFileGDB_management(path, "OnSystem_PVMT_" + fileYear)
 
 
 #NHS asset and gather GID's
